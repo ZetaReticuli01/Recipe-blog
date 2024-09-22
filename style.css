@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui;
+  font-weight: 300;
+  font-style: normal;}
+
+body {
+  background-color: #f8f8f8;
+  color: #333;
+  padding: 20px;
+  overflow-x: hidden; 
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #333,white);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search input {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+.search button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search button:hover {
+  background-color: #444;
+}
+
+.meal-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.meal-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.meal-item:hover {
+  transform: scale(1.05);
+}
+
+.meal-item img {
+  width: 100%;
+  height: auto;
+}
+
+.meal-item h3 {
+  padding: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.modalContainer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  z-index: 1000; 
+}
+
+.mDetContent {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  max-height: 80vh; 
+  overflow-y: auto; 
+}
+
+.recipe-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.recipe-category {
+  color: #777;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.recipe-instruct h3 {
+  color: #ff6b6b;
+  margin-bottom: 10px;
+}
+
+.recipe-instruct p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.recipe-img img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.recipe-video a {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.recipe-video a:hover {
+  background-color: #444;
+}
+
+.cBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+.cBtn svg {
+  fill: #333;
+  transition: fill 0.3s;
+}
+
+.cBtn svg:hover {
+  fill: black;
+}
+
+@media (max-width: 768px) {
+  .search input {
+      width: 100px;
+  }
+
+  .meal-list {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .meal-item h3 {
+      font-size: 1rem;
+  }
+
+  .recipe-title {
+      font-size: 1.5rem;
+  }
+}
